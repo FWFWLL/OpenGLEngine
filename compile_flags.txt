@@ -1,4 +1,0 @@
--std=c++17
--m64
--Iinclude/
-
