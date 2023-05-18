@@ -4,6 +4,8 @@
 #include <iostream>
 #include <stdexcept>
 
+using namespace FFL;
+
 int main(int argc, char** argv) {
 	Application app{};
 
