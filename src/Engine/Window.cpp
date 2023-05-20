@@ -45,7 +45,7 @@ void Window::initOpenGL() {
 	glfwMakeContextCurrent(m_window);
 
 	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		throw std::runtime_error("failed to initialize GLAD");
+		throw std::runtime_error("failed to initialize GLAD!");
 	}
 
 	glViewport(0, 0, m_width, m_height);
