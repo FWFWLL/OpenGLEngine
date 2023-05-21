@@ -1,16 +1,18 @@
-TARGET := OpenGLEngine
+TARGET := bin/OpenGLEngine
 
-CFLAGS := -std=c++17 -m64 -Iinclude -Ideps
+CFLAGS := -std=c++17 -m64 -Iinclude -Ideps/include
 LDFLAGS := -lglfw -lGL
 
-all: src/*.cpp src/**/*.cpp
-	g++ $(CFLAGS) -o bin/$(TARGET) src/*.cpp src/**/*.cpp deps/glad.c $(LDFLAGS)
+all: $(TARGET)
+
+$(TARGET):
+	g++ $(CFLAGS) -o $@ src/*.cpp src/**/*.cpp deps/src/glad.c $(LDFLAGS)
 
 .PHONY: run clean
 
-run:
-	@./bin/$(TARGET)
+run: all
+	@./$(TARGET)
 
-clean:
-	@rm -f bin/$(TARGET)
+clean: $(TARGET)
+	@rm -rf $(TARGET)
 
